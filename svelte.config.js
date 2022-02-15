@@ -8,8 +8,13 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
-	}
+    vite: {
+      server: {
+        hmr: false
+      }
+    },
+		adapter: adapter(),
+	},
 };
 
 export default config;
