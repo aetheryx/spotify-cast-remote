@@ -22,5 +22,6 @@ module.exports = {
     'indent': ['warn', 2, { 'SwitchCase': 1 }],
     'no-extra-semi': 'warn',
     '@typescript-eslint/semi': 'warn',
+    'quotes': ['warn', 'single'],
   },
 };
