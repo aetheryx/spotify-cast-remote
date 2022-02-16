@@ -12,7 +12,14 @@
 </svelte:head>
 
 <div>
+  <cast-media-player></cast-media-player>
   <code style="white-space: pre-wrap;">
     {JSON.stringify($playerState, null, 2)}
   </code>
 </div>
+
+<style>
+  cast-media-player {
+    display: none;
+  }
+</style>
