@@ -21,7 +21,7 @@ function init() {
     if (!session) {
       return;
     }
-  
+
     const mediaInfo = new chrome.cast.media.MediaInfo(KEEPALIVE_IMAGE, 'image/gif');
     const request = new chrome.cast.media.LoadRequest(mediaInfo);
 
