@@ -15,8 +15,15 @@ interface Payload {
 
 export const spotifyState = writable<string>('UNINITIALISED');
 
-export function init(token: string) {
+export async function init(cookie: string) {
   spotifyState.set('CONNECTING');
+
+  const { token } = await fetch('/api/user', {
+    headers: {
+      'x-spotify-cookie': cookie
+    }
+  })
+    .then(r => r.json());
 
   const ws = new WebSocket(`wss://${ඞ.SPOTIFY_WS_URL}/?access_token=${token}`);
 

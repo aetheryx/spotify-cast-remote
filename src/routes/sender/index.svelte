@@ -1,7 +1,7 @@
 <script lang="ts">
   import { castState } from './cast';
   import { spotifyState, init } from './spotify';
-  let token = '';
+  let cookie = '';
 </script>
 
 <svelte:head>
@@ -18,6 +18,6 @@
 <main>
   cast state: {$castState}<br />
   spotify state: {$spotifyState}<br />
-  <input bind:value={token} />
-  <button on:click={() => init(token)}>Start</button>
+  <input bind:value={cookie} />
+  <button on:click={() => init(cookie)}>Start</button>
 </main>
