@@ -6,4 +6,4 @@ node_modules
 .env
 .env.*
 !.env.example
-src/routes/sender/spotify-pls-dont-sue.ts
+src/spotify-pls-dont-sue.ts

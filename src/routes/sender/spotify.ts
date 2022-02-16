@@ -1,6 +1,6 @@
 import { Namespaces } from '../../ipc';
 import { writable } from 'svelte/store';
-import { SPOTIFY_WS_URL, SPOTIFY_SUBSCRIBE_URL, SUBSCRIBE_SUCCESS_RESPONSE } from './spotify-pls-dont-sue';
+import { ඞ } from '../../spotify-pls-dont-sue';
 
 interface Payload {
   type: string;
@@ -18,7 +18,7 @@ export const spotifyState = writable<string>('UNINITIALISED');
 export function init(token: string) {
   spotifyState.set('CONNECTING');
 
-  const ws = new WebSocket(`wss://${SPOTIFY_WS_URL}/?access_token=${token}`);
+  const ws = new WebSocket(`wss://${ඞ.SPOTIFY_WS_URL}/?access_token=${token}`);
 
   ws.onmessage = (payload) => {
     handlePayload(token, JSON.parse(payload.data));
@@ -49,7 +49,7 @@ async function handlePayload(token: string, payload: Payload): Promise<void> {
 
 async function subscribe(token: string, connectionID: string) {
   spotifyState.set('SUBSCRIBING');
-  const res = await fetch(`https://${SPOTIFY_SUBSCRIBE_URL}?connection_id=${connectionID}`, {
+  const res = await fetch(`https://${ඞ.SPOTIFY_SUBSCRIBE_URL}?connection_id=${connectionID}`, {
     method: 'PUT',
     headers: {
       authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ async function subscribe(token: string, connectionID: string) {
   });
 
   const body = await res.json();
-  if (body.message === SUBSCRIBE_SUCCESS_RESPONSE) {
+  if (body.message === ඞ.SUBSCRIBE_SUCCESS_RESPONSE) {
     spotifyState.set('CONNECTED');
   }
 }
