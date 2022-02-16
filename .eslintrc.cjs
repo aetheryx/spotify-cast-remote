@@ -23,6 +23,7 @@ module.exports = {
     'no-extra-semi': 'warn',
     '@typescript-eslint/semi': 'warn',
     'quotes': ['warn', 'single'],
-    '@typescript-eslint/no-inferrable-types': ['off']
+    '@typescript-eslint/no-inferrable-types': ['off'],
+    '@typescript-eslint/no-namespace': ['off']
   },
 };
