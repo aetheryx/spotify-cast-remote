@@ -1,6 +1,5 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/env';
-import { cast, chrome } from '../../google-cast-sdk';
 
 export const castState = writable<string>('UNINITIALISED');
 

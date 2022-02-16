@@ -11,3 +11,6 @@ declare namespace App {
 
 	interface Stuff {}
 }
+
+declare const cast: any;
+declare const chrome: any;
