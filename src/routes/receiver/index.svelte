@@ -1,10 +1,5 @@
 <script lang="ts">
-  import { browser } from '$app/env';
-  import { playerState } from './player-state';
-
-  if (browser) {
-    (document.body.style as any).zoom = '150%';
-  }
+  import Player from './player/player.svelte';
 </script>
 
 <svelte:head>
@@ -15,9 +10,7 @@
 
 <div>
   <cast-media-player />
-  <code style="white-space: pre-wrap;">
-    {JSON.stringify($playerState, null, 2)}
-  </code>
+  <Player />
 </div>
 
 <style>
