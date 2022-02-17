@@ -1,4 +1,4 @@
-import { Namespaces } from '../../ipc';
+import { Namespaces, type AnyPayload } from '../../ipc';
 import { writable } from 'svelte/store';
 import { ඞ } from '../../spotify-pls-dont-sue';
 
@@ -28,7 +28,7 @@ export async function init(cookie: string) {
   const ws = new WebSocket(`wss://${ඞ.SPOTIFY_WS_URL}/?access_token=${token}`);
 
   ws.onmessage = (payload) => {
-    handlePayload(token, JSON.parse(payload.data));
+    handlePayload(token, cookie, JSON.parse(payload.data));
   };
 
   ws.onopen = () => {
@@ -38,13 +38,13 @@ export async function init(cookie: string) {
   };
 }
 
-async function handlePayload(token: string, payload: Payload): Promise<void> {
+async function handlePayload(token: string, cookie: string, payload: Payload): Promise<void> {
   if (payload.type !== 'message') {
     return;
   }
 
   if (payload.headers?.['Spotify-Connection-Id']) {
-    return subscribe(token, payload.headers['Spotify-Connection-Id']);
+    return subscribe(token, cookie, payload.headers['Spotify-Connection-Id']);
   }
 
   for (const event of payload.payloads.map(p => p.events).flat()) {
@@ -54,7 +54,7 @@ async function handlePayload(token: string, payload: Payload): Promise<void> {
   }
 }
 
-async function subscribe(token: string, connectionID: string) {
+async function subscribe(token: string, cookie: string, connectionID: string) {
   spotifyState.set('SUBSCRIBING');
   const res = await fetch(`https://${ඞ.SPOTIFY_SUBSCRIBE_URL}?connection_id=${connectionID}`, {
     method: 'PUT',
@@ -66,6 +66,16 @@ async function subscribe(token: string, connectionID: string) {
   const body = await res.json();
   if (body.message === ඞ.SUBSCRIBE_SUCCESS_RESPONSE) {
     spotifyState.set('CONNECTED');
+    const context = cast.framework.CastContext.getInstance();
+    const session = context.getCurrentSession();
+  
+    if (session) {
+      console.log('sending', cookie);
+      session.sendMessage(Namespaces.APPLICATION_LOGIC, {
+        type: 'COOKIE',
+        payload: { cookie }
+      } as AnyPayload);
+    }
   }
 }
 
