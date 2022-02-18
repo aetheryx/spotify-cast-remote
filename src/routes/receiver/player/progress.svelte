@@ -43,7 +43,7 @@
     display: flex;
     flex-flow: column nowrap;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 3px;
 
     .timestamps {
       display: flex;
