@@ -1,7 +1,7 @@
 <script>
   import { playerState } from '../player-state';
   import Background from './background.svelte';
-  import Controls from './controls.svelte';
+  import Controls from './controls/controls.svelte';
   import CurrentSong from './current-song.svelte';
 </script>
 
