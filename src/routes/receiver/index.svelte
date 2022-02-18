@@ -13,8 +13,8 @@
   <Player />
 </div>
 
-<style>
-  cast-media-player {
+<style lang="scss">
+  cast-media-player, :global(touch-controls) {
     display: none;
   }
 </style>
