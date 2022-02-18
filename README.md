@@ -1,40 +1,9 @@
-# create-svelte
+# spotify-cast-remote
+a google cast web sender + receiver acting as a spotify display  
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+the official spotify applications on cast devices force you to use the devices as audio sources; they don't support the "remote control" feature other spotify platforms do. if your cast device is (for example) a desk accessory, you might want to display your current spotify song / control spotify from your cast device while having the audio come from the spotify app on your PC. the official spotify apps don't let you do this.  
 
-## Creating a project
+by using spotify's own websocket, this unofficial solution has effectively the same latency as spotify's official apps. it's also using spotify's api routes to extract colors and fetch artist backgrounds - it's modeled after spotify's own clients:
+![](https://cdn.discordapp.com/attachments/943474153611227177/944140318876516402/unknown.png)
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+developed for a nest hub 2
