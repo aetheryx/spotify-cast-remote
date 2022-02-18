@@ -8,6 +8,6 @@
 
 <style lang="scss">
   .controls {
-    padding-top: 50px;
+    padding-top: 30px;
   }
 </style>
