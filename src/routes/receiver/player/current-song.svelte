@@ -17,13 +17,6 @@
 </div>
 
 <style lang="scss">
-  @font-face {
-    font-family: spotify;
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://encore.scdn.co/fonts/CircularSpotify-UI-Latin-Book-ffeb1e7f75131ff615f338c73751b633.woff2);
-  }
-
   .current-song {
     display: flex;
     flex-flow: row nowrap;

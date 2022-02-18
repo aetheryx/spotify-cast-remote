@@ -1,3 +1,20 @@
 html, body {
   background: white;
 }
+
+@font-face {
+  font-family: spotify;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://encore.scdn.co/fonts/CircularSpotify-UI-Latin-Book-ffeb1e7f75131ff615f338c73751b633.woff2);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: spotify-circular;
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Light.afd9ab26.woff2) format("woff2"),
+    url(https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Light.2a78c017.woff) format("woff"),
+    url(https://open.scdn.co/cdn/fonts/CircularSpUIv3T-Light.89e4be2e.ttf) format("truetype");
+}
