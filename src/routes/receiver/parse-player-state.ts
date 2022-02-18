@@ -33,7 +33,7 @@ export function intoState(data: Record<string, any>): PlayerState | null {
     durationMs: state.item.duration_ms,
     progress: {
       ms: state.progress_ms,
-      syncedAt: Date.now(),
+      syncedAt: state.timestamp,
     },
     iconURL: state.item.album.images[0].url,
     background: backgroundCache.get(state.item.id) ?? null
