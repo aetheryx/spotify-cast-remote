@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { playerState } from '../../player-state';
+  import { playerState } from '../player-state';
 
   function parseTimestamp(ms: number): string {
     const fullSeconds = ms / 1000;
@@ -43,6 +43,7 @@
     display: flex;
     flex-flow: column nowrap;
     height: 50px;
+    margin-top: 10px;
 
     .timestamps {
       display: flex;
