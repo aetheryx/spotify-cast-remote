@@ -81,7 +81,7 @@
     top: 0;
     left: 0;
     object-fit: cover;
-    z-index: 3;
+    z-index: 1;
     opacity: 0;
 
     &.loaded {
