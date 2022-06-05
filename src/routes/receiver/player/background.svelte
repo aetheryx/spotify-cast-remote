@@ -46,6 +46,7 @@
   {#each backgrounds as background}
     {#if background.image}
       <img
+        decoding="async"
         on:load={() => {
           if (!background.loaded) {
             background.loaded = 'loaded';
@@ -85,7 +86,7 @@
     opacity: 0;
 
     &.loaded {
-      animation: opacity 0.25s ease-in-out forwards;
+      animation: opacity .75s ease forwards;
     }
 
     &.preloaded {

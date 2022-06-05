@@ -1,32 +1,23 @@
 <script lang="ts">
   const items: Array<{ imageURL: string }> = [
     {
-      imageURL: 'https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png'
-    },
-    {
       imageURL: 'https://newjams-images.scdn.co/image/ab676477000033ad/dt/v3/discover-weekly/62jut_pc1Y1cL40_cnlT2cIkNhzw5YsyELkfO4vduQVPl2PRmzELqwb4IPyxhB7YParfqrRnG9QJHie82MjEo6-fo-U-c9aEdBr4PhFr5vY=/MjU6MjQ6NzBUMjAtMzAtMg=='
     },
     {
-      imageURL: 'https://daily-mix.scdn.co/covers/backtracks/PZN_Repeat_Rewind2_DEFAULT-nl.jpg'
-    },
-    {
-      imageURL: 'https://daily-mix.scdn.co/covers/on_repeat/PZN_On_Repeat2_DEFAULT-nl.jpg',
+      imageURL: 'https://daily-mix.scdn.co/covers/backtracks/PZN_Repeat_Rewind2_DEFAULT-en.jpg'
     },
     {
       imageURL: 'https://thisis-images.scdn.co/37i9dQZF1DZ06evO2nTSE0-default.jpg'
     },
     {
-      imageURL: 'https://i.scdn.co/image/ab6761610000517430d9a4acdf8cd3e8c0ad39ab',
+      imageURL: 'https://lineup-images.scdn.co/wrapped-2021-top100_DEFAULT-en.jpg'
     },
     {
-      imageURL: 'https://daily-mix.scdn.co/covers/time-capsule/time-capsule-blue_DEFAULT-nl.jpg',
+      imageURL: 'https://seeded-session-images.scdn.co/v1/img/artist/0u18Cq5stIQLUoIaULzDmA/en'
     },
     {
-      imageURL: 'https://lineup-images.scdn.co/wrapped-2020-top100_DEFAULT-nl.jpg'
-    },
-    {
-      imageURL: 'https://lineup-images.scdn.co/wrapped-2021-top100_DEFAULT-nl.jpg'
-    },
+      imageURL: 'https://i.scdn.co/image/ab67616d0000b2735f1f1c836f2519b6579ae4df'
+    }
   ]
 </script>
 

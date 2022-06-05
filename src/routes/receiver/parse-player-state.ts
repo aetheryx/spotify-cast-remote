@@ -20,7 +20,7 @@ export interface PlayerState {
 }
 
 export function intoState(data: Record<string, any>): PlayerState | null {
-  const { state } = data.event;
+  const { state, event_id } = data.event;
 
   return {
     id: state.item.id,
@@ -33,7 +33,7 @@ export function intoState(data: Record<string, any>): PlayerState | null {
     durationMs: state.item.duration_ms,
     progress: {
       ms: state.progress_ms,
-      syncedAt: state.timestamp,
+      syncedAt: event_id,
     },
     iconURL: state.item.album.images[0].url,
     background: backgroundCache.get(state.item.id) ?? null
